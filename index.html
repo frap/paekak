@@ -27,7 +27,7 @@
 
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
-    center: [-41.054360, 174.924113], // EDIT coordinates to re-center map
+    center: [-41.05436, 174.92411], // EDIT coordinates to re-center map
     zoom: 15,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: false,
     tap: false
@@ -35,11 +35,16 @@
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
-    'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://osm.org/copyright">\
-        OpenStreetMap</a> contributors, &copy;\
-        <a href="https://carto.com/attribution">CARTO</a>'
-  }).addTo(map);
+  'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+   maxZoom: 17,
+   attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+}).addTo(map);
+ // L.tileLayer(
+ //   'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+ //     attribution: '&copy; <a href="https://osm.org/copyright">\
+ //       OpenStreetMap</a> contributors, &copy;\
+ //       <a href="https://carto.com/attribution">CARTO</a>'
+ // }).addTo(map);
 
   /* Display a point marker with pop-up text */
   L.marker(-41.054360, 174.924113]).addTo(map) // EDIT marker coordinates
