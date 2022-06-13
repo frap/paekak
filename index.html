@@ -51,7 +51,7 @@
 
   /* Display a point marker with pop-up text */
   L.marker([-41.054360, 174.924113]).addTo(map) // EDIT marker coordinates
-  .bindPopup("Certa house here"); // EDIT pop-up text message
+  .bindPopup("Designwork GPS house location"); // EDIT pop-up text message
 
   $.getJSON("map.geojson",function(data){
       // add GeoJSON layer to the map once the file is loaded
@@ -60,7 +60,7 @@
               featureLayer.bindPopup(feature.properties.NAME_1);
           }
       }).addTo(map);
-      map.fitBounds(datalayer.getBounds());
+      //map.fitBounds(datalayer.getBounds());
   });
 
 
