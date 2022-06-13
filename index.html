@@ -53,7 +53,7 @@
   L.marker([-41.054360, 174.924113]).addTo(map) // EDIT marker coordinates
   .bindPopup("Certa house here"); // EDIT pop-up text message
 
-  $.getJSON("https://paekak.tuatara.red/map.geojson",function(data){
+  $.getJSON("map.geojson",function(data){
       // add GeoJSON layer to the map once the file is loaded
       var datalayer = L.geoJson(data ,{
           onEachFeature: function(feature, featureLayer) {
