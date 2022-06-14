@@ -56,6 +56,15 @@
     //    OpenStreetMap</a> contributors, &copy;\
     //    <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map);
+   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+             maxZoom: 15,
+             id: 'mapbox/outdoors-v11',  //outdoors-v11
+               //  tileSize: 512,
+              //  zoomOffset: -1,
+             accessToken: 'pk.eyJ1IjoiYWdhc3NvbiIsImEiOiJjbDQ3dDF2eGgwYjFhM3BsaXNnZnUyMjFkIn0.raZbk_4w1n4IGIlmwIrd6A'
+         }).addTo(map);
+
 
   /* Display a point marker with pop-up text */
   L.marker([-41.054360, 174.924113]).addTo(map) // EDIT marker coordinates
@@ -71,7 +80,11 @@
       //map.fitBounds(datalayer.getBounds());
   });
 
+    function onMapClick(e) {
+             alert("This has coords: " + e.latlng);
+         }
 
+    map.on('click', onMapClick);
 
   </script>
 </body>
