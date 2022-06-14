@@ -78,8 +78,9 @@
   });
 
     function onMapClick(e) {
+             var coord = e.latlng;
              alert("This has coords: " + e.latlng);
-         }
+         };
 
     map.on('click', onMapClick);
 
