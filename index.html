@@ -17,6 +17,7 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"
 	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 	  crossorigin="anonymous"></script>
+ <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
 
   <!-- Position the map and title with Cascading Style Sheet (CSS) -->
   <style>
@@ -69,7 +70,7 @@
 
 
   /* Display a point marker with pop-up text */
-  L.marker([-41.054360, 174.924113]).addTo(map) // EDIT marker coordinates
+  L.marker([-41.054350, 174.92412]).addTo(map) // EDIT marker coordinates
   .bindPopup("Designwork GPS house location"); // EDIT pop-up text message
 
   $.getJSON("map-chg.geojson",function(data){
