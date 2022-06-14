@@ -49,8 +49,8 @@
    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 }).addTo(map);
   L.tileLayer(
-    'https://api.maptiler.com/tiles/contours/tiles.json?key=nCuQAbtdnzcSoiOEJWVa', {
-     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    'https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=14d1c23f2adc41828d0519f830365211', {
+     attribution: '<a href="https://www.thunderforest.com/copyright/" target="_blank">&copy; Thuderforest</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; Thunderforest contributors</a>'
     //'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     //  attribution: '&copy; <a href="https://osm.org/copyright">\
     //    OpenStreetMap</a> contributors, &copy;\
@@ -61,7 +61,7 @@
   L.marker([-41.054360, 174.924113]).addTo(map) // EDIT marker coordinates
   .bindPopup("Designwork GPS house location"); // EDIT pop-up text message
 
-  $.getJSON("map.geojson",function(data){
+  $.getJSON("map-chg.geojson",function(data){
       // add GeoJSON layer to the map once the file is loaded
       var datalayer = L.geoJson(data ,{
           onEachFeature: function(feature, featureLayer) {
