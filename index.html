@@ -36,7 +36,7 @@
 
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
-    center: [-41.05436, 174.92411], // EDIT coordinates to re-center map
+    center: [-41.054365, 174.92421], // EDIT coordinates to re-center map
     zoom: 17,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: false,
     tap: false
@@ -50,7 +50,7 @@
 }).addTo(map);
   L.tileLayer(
     'https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=14d1c23f2adc41828d0519f830365211', {
-     maxZoom: 18,
+     maxZoom: 22,
      attribution: '<a href="https://www.thunderforest.com/copyright/" target="_blank">&copy; Thuderforest</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; Thunderforest contributors</a>'
 
     //'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -79,7 +79,7 @@
               featureLayer.bindPopup(feature.properties.NAME_1);
           }
       }).addTo(map);
-      //map.fitBounds(datalayer.getBounds());
+      map.fitBounds(datalayer.getBounds());
   });
 
     function onMapClick(e) {
