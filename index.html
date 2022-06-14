@@ -64,7 +64,7 @@
   }).addTo(map);
 
   /* Display a point marker with pop-up text */
-  L.marker([-41.054510, 174.92390]).addTo(map) // EDIT marker coordinates
+  L.marker([-41.05421, 174.9239]).addTo(map) // EDIT marker coordinates
   .bindPopup("Designwork GPS house location"); // EDIT pop-up text message
 
   $.getJSON("map-chg.geojson",function(data){
@@ -79,10 +79,15 @@
 
     function onMapClick(e) {
              var coord = e.latlng;
-             alert("This has coords: " + e.latlng);
+             alert("This has coords: " + coord);
          };
 
-    map.on('click', onMapClick);
+    map.on('click', function(e){
+  var coord = e.latlng;
+  var lat = coord.lat;
+  var lng = coord.lng;
+  console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+  });
 
   </script>
 </body>
